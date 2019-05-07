@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
    <title> Cliente - Cadastro</title>
    <link rel="stylesheet" href="./css/bootstrap.css">
   </head>
@@ -65,28 +64,41 @@
     </div>
 
     <div class="container">
-      <form>
+      <form name="cadastro">
       <h2>Comece a Efetuar seu cadastro AGORA!</h2>
       <h5>Passo 1 - Dados Pessoais</h5>
       <div class="jumbotron row bg-light">
-        <div class="col">
-          <p class="form-group">
-            <label for="nome">Nome: </label><br/>
-      			<input class="form-control form-control-lg" type="text" name="nome" placeholder="Informe seu nome" autocomplete="off"><br><br>
-            <label for="endereco">Endereço: </label><br/>
+        <div id="grupoCliente1" class="col form-group">
+            <label id="labelCliente" for="nomeCliente">Nome: </label><br/>
+      			<input class="form-control form-control-lg" type="text" name="nomeCliente" placeholder="Informe seu nome" autocomplete="off"><br><br>
+            <div id="alertaCliente" style="display:none" class="alert alert-danger">
+              <spam>Preencha o campo nome corretamente!<spam>
+            </div>
+
+            <label id="labelEndereco" for="endereco">Endereço: </label><br/>
       			<input class="form-control form-control-lg" type="text" name="endereco" placeholder="Nome da rua, bairro e nº"><br/><br/>
-            <label for="Telefone">Telefone: </label><br/>
+            <div id="alertaEndereco" style="display:none" class="alert alert-danger">
+              <spam>Preencha o campo Endereço corretamente!<spam>
+            </div>
+
+            <label id="labelTelefone" for="Telefone">Telefone: </label><br/>
       			<input class="form-control form-control-lg" type="text" name="telefone" placeholder="Ex: (31)9999-9999"><br><br>
-            <label>Gênero: </label><br/>
+            <div id="alertaTelefone" style="display:none" class="alert alert-danger">
+              <spam>Preencha o campo Telefone corretamente!<spam>
+            </div>
+
+            <label id="labelGenero">Gênero: </label><br/>
             <div class="form-check">
         			<input class="form-check-input" type="radio" id="masculino" name="genero" value="M">
-        			<label class="form-check-label" for="genero">Masculino </label><br/>
+        			<label id="labelRad1" class="form-check-label" for="genero">Masculino </label><br/>
         			<input class="form-check-input" type="radio" id="feminino" name="genero" value="F">
-        			<label class="form-check-label" for="genero">Feminino </label><br/>
+        			<label id="labelRad2" class="form-check-label" for="genero">Feminino </label><br/>
         			<input class="form-check-input" type="radio" id="outros" name="genero" value="O">
-        			<label class="form-check-label"for="genero">Outros </label>
+        			<label id="labelRad3" class="form-check-label"for="genero">Outros </label>
         		</div>
-          </p>
+            <div id="alertaGenero" style="display:none" class="alert alert-danger">
+              <spam>X<spam>
+            </div>
         </div>
       </div>
 
@@ -94,22 +106,25 @@
       <div class="jumbotron row bg-light">
         <div class="col-2">
           <p class="form-group">
-            <label for="area">Áreas de interesse:</label><br/>
+            <label id="labelInteresse" for="area">Áreas de interesse:</label><br/>
             <div class="form-check">
-        			<input class="form-check-input" type="checkbox" id="web" name="area[0]">
-        			<label class="form-check-label" for="web">Esportes</label><br/>
-        			<input class="form-check-input" type="checkbox" id="otimizacao" name="area[1]">
-        			<label class="form-check-label" for="otimizacao">Fashion</label><br/>
-        			<input class="form-check-input" type="checkbox" id="movel" name="area[2]">
-        			<label class="form-check-label" for="movel">Casual</label><br/><br/>
+        			<input class="form-check-input" type="checkbox" id="esportes" name="area[0]">
+        			<label id="labelInt1" class="form-check-label" for="web">Esportes</label><br/>
+        			<input class="form-check-input" type="checkbox" id="fashion" name="area[1]">
+        			<label id="labelInt2" class="form-check-label" for="otimizacao">Fashion</label><br/>
+        			<input class="form-check-input" type="checkbox" id="casual" name="area[2]">
+        			<label id="labelInt3" class="form-check-label" for="movel">Casual</label><br/><br/>
         		</div>
+            <div id="alertaInteresse" style="display:none" class="alert alert-danger">
+              <spam>Preencha ao menos um!<spam>
+            </div>
           </p>
         </div>
         <div class="col-6">
           <p>
         		<div class="form-group mr-5">
-        			<label for="cidade">Cidade:</label><br>
-        			<select class="form-control form-control-sm"  name="cidade">
+        			<label id="labelCidade" for="cidade">Cidade:</label><br>
+        			<select id="selectCidade" class="form-control form-control-sm"  name="cidade">
         				<option value="0">--- Selecione ---</option>
         				<option value="56">João Monlevade</option>
         				<option value="64">Itabira</option>
@@ -117,6 +132,9 @@
         				<option value="1">Belo Horizonte</option>
         				<option value="638">Itaúna</option>
         			</select>
+              <div id="alertaCidade" style="display:none" class="alert alert-danger">
+                <spam>Marque uma Cidade!<spam>
+              </div>
         		</div>
           </p>
         </div>
@@ -139,20 +157,29 @@
 
             <div class="form-group">
               <p>Email:</p>
-              <label class="sr-only">Email</label>
+              <label id="labelEmail" class="sr-only">Email</label>
               <div class="input-group mb-2 mr-sm-2">
                 <div class="input-group-prepend">
                   <div class="input-group-text">@</div>
                 </div>
-                <input type="text" class="form-control" placeholder="exemplo@exemplo.com">
+                <input type="text" class="form-control" name="email" placeholder="exemplo@exemplo.com">
+              </div>
+              <div id="alertaEmail" style="display:none" class="alert alert-danger">
+                <spam>Preencha o email corretamente!<spam>
               </div>
               <br>
-        			<label for="usuario">Usuário:</label><br>
+        			<label id="labelUsuario" for="usuario">Usuário:</label><br>
         			<input class="form-control form-control" type="text" name="usuario" placeholder="exlo" autocomplete="off">
+              <div id="alertaUsuario" style="display:none" class="alert alert-danger">
+                <spam>Preencha um usuário válido!<spam>
+              </div>
         			<br>
-        			<label for="senha">Senha:</label><br>
+        			<label id="labelSenha" for="senha">Senha:</label><br>
         			<input class="form-control form-control" type="password" name="senha">
               <small id="passwordHelpInline" class="text-muted">*Deve conter entre 8 e 20 caracteres.</small>
+              <div id="alertaSenha" style="display:none" class="alert alert-danger">
+                <spam>Forneça uma senha entre 8 e 20 caracteres!<spam>
+              </div>
         			</div>
           </p>
         </div>
@@ -180,7 +207,7 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="cc-nome">Nome no cartão</label>
-                <input type="text" class="form-control" id="cc-nome" placeholder="" required="">
+                <input type="text" class="form-control" id="cc-nome" name="ccnome" placeholder="" required="">
                 <small class="text-muted">Nome como mostrado no cartão.</small>
               </div>
               <div class="col-md-6 mb-3">
@@ -199,28 +226,26 @@
               </div>
             </div>
             <hr>
-
-
-
-
           </p>
         </div>
       </div>
 
       <div class="custom-control custom-switch">
-        <input type="checkbox" name="aceite" value="aceite" id="aceite" class="custom-control-input">
-        <label for="aceite" class="custom-control-label">ACEITO AS CONDIÇÕES E TERMOS DE USO.</label>
+        <input type="checkbox" name="aceite" value="aceite" id="aceite" class="custom-control-input" required="">
+        <label id="labelTermos" for="aceite" class="custom-control-label">ACEITO AS CONDIÇÕES E TERMOS DE USO.</label>
       </div>
       <br>
 
-      <button class="form-control btn btn-success" type="submit" value="Cadastrar">Cadastrar</button><br><br>
-			<button class="form-control btn btn-danger" type="reset" value="Limpar"> Limpar</button>
+      <div class="form-group">
+        <button class="form-control btn btn-success" onclick="conferirCliente()" type="submit" value="Cadastrar">Cadastrar</button>
+      </div>
+      <br>
+      <button class="form-control btn btn-danger" type="reset" value="Limpar"> Limpar</button><br><br>
 
       <p>*A segurança dos seus dados é nossa responsabilidade!</p>
     </form>
     </div>
-
-
+    <script src="formCliente.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

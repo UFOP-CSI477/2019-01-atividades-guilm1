@@ -64,75 +64,88 @@
     </div>
 
     <div class="container">
-      <form>
+      <form name="dados">
         <h2>Efetue o cadastro de algum Produto!</h2>
         <div class="jumbotron row bg-light">
-          <div class="col">
-            <p class="form-group">
-              <label for="nome">Nome: </label><br>
-              <input class="form-control form-control-lg" type="text" name="nome" placeholder="nome do produto" autocomplete="off">
-            </p>
+          <div id="grupo1" class="col form-group">
+              <label id="labelNomeProduto" for="nomeProduto">Nome: </label><br>
+              <input class="form-control" type="text" name="nomeProduto" placeholder="nome do produto" autocomplete="off">
+              <div id="alerta1" style="display:none" class="alert alert-danger">
+                <spam>Preencha o campo nome corretamente!<spam>
+              </div>
           </div>
         </div>
 
         <div class="jumbotron row bg-light">
-          <div class="col-3">
+          <div id="grupo2" class="col-3">
             <p>
-              <label >Unidade de Medida: </label><br/>
+              <label id="labelUnidadeMedida">Unidade de Medida: </label><br/>
               <div class="form-check">
                 <input class="form-check-input" type="radio" id="quilo" name="unidade" value="kg">
-                <label class="form-check-label" for="unidade">Quilograma </label><br/>
+                <label id="labelv1" class="form-check-label" for="unidade">Quilograma </label><br/>
                 <input class="form-check-input" type="radio" id="grama" name="unidade" value="g">
-                <label class="form-check-label" for="unidade">Feminino </label><br/>
+                <label id="labelv2" class="form-check-label" for="unidade">Grama </label><br/>
                 <input class="form-check-input" type="radio" id="mili" name="unidade" value="mg">
-                <label class="form-check-label" for="unidade">Miligrama </label><br/><br/>
+                <label id="labelv3" class="form-check-label" for="unidade">Miligrama </label><br/><br/>
+              </div>
+              <div id="alerta2" style="display:none" class="alert alert-danger">
+                <spam>Marque uma opção para Unidade de Medida<spam>
               </div>
             </p>
           </div>
-          <div class="col-5">
-            <p>
+          <div id="grupo3" class="col-5">
               <div class="form-group">
-                <label for="peso">Peso: </label><br/>
+                <label id="labelPesoProduto" for="peso">Peso: </label><br/>
                 <input class="form-control form-control-sm" type="text" name="peso" placeholder="Ex: 0.9"><br/><br/>
+                <div id="alerta3" style="display:none" class="alert alert-danger">
+                  <spam>Preencha o campo peso corretamente!<spam>
+                </div>
               </div>
-            </p>
           </div>
-          <div class="col-4">
-            <p>
+          <div id="grupo4" class="col-4">
               <div class="form-group">
-                <label for="valor">Valor($): </label><br>
+                <label id="labelValorProduto" for="valor">Valor($): </label><br>
                 <input class="form-control form-control-sm" type="text" name="valor" placeholder="Ex: 4.00"><br/><br/>
+                <div id="alerta4" style="display:none" class="alert alert-danger">
+                  <spam>Preencha o campo valor corretamente!<spam>
+                </div>
               </div>
-            </p>
           </div>
         </div>
 
-        <div class="jumbotron row bg-light">
-          <div class="col-2">
+        <div id="ultimo" class="jumbotron row bg-light">
+          <div id="grupo5" class="col-2">
             <p>
-              <label for="mercado">Mercado:</label><br/>
+              <label id="labelMercado" for="mercado">Mercado:</label><br/>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="interno" name="mercado[0]">
-                <label class="form-check-label" for="interno">INTERNO</label><br/>
+                <label id="label1" class="form-check-label" for="interno">INTERNO</label><br/>
                 <input class="form-check-input" type="checkbox" id="externo" name="mercado[1]">
-                <label class="form-check-label" for="externo">EXTERNO</label>
+                <label id="label2" class="form-check-label" for="externo">EXTERNO</label>
+              </div>
+              <div id="alerta5" style="display:none" class="alert alert-danger">
+                <spam>Marque ao menos uma opção para Mercado<spam>
               </div>
             </p>
           </div>
-          <div class="col-5">
+          <div id="grupo6" class="col-5">
             <p>
               <div class="form-group">
-                <label for="estoque">Estoque Inicial: </label><br>
+                <label id="labelEstoqueProduto" for="estoque">Estoque Inicial: </label><br>
                 <input class="form-control form-control-sm" type="text" name="estoque" placeholder="Ex: 2"><br/><br/>
               </div>
+              <div id="alerta6" style="display:none" class="alert alert-danger">
+                <spam>Preencha o campo Estoque Inicial corretamente!<spam>
+              </div>
             </p>
           </div>
-          <div class="col-5">
+
+          <div id="grupo7" class="col-5">
             <p>
               <div class="form-group">
-                <label for="fornecedor">Fornecedor:</label>
+                <label id="labelFornecedor" for="fornecedor">Fornecedor:</label>
                 <br>
-                <select class="form-control form-control-sm" name="fornecedor">
+                <select id="selectValid" class="form-control form-control-sm" name="fornecedor">
                   <option value="0">--- Selecione ---</option>
                   <option value="1">Fornecedor 1</option>
                   <option value="2">Fornecedor 2</option>
@@ -140,15 +153,21 @@
                   <option value="4">Fornecedor 4</option>
                   <option value="5">Fornecedor 5</option>
                 </select>
+                <div id="alerta7" style="display:none" class="alert alert-danger">
+                  <spam>Marque uma opção para fornecedor<spam>
+                </div>
               </div>
             </p>
           </div>
         </div>
-
-      <button class="form-control btn btn-success" type="submit" value="Cadastrar">Cadastrar</button><br><br>
-      <button class="form-control btn btn-danger" type="reset" value="Limpar"> Limpar</button>
+      <div class="form-group">
+        <button class="form-control btn btn-success" onclick="conferir()" type="button" value="Cadastrar">Cadastrar</button>
+      </div>
+      <br>
+      <button class="form-control btn btn-danger" type="reset" value="Limpar"> Limpar</button><br><br>
       </form>
     </div>
+    <script src="form.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
