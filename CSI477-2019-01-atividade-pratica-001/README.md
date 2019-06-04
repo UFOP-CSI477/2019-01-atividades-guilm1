@@ -39,3 +39,11 @@ As páginas que foram elaboradas podem ser encontrados em: https://github.com/UF
 * Página de Competição de carrinhos de rolimã - 01-corrida.html
 * Página de cálculo de IMC - 02-imc.html
 * Página Escala Richter - 03-escala.html
+
+### 3. Referências
+As referências utilizadas foram principalmente as documentações de cada framework adotado e, também, alguns fóruns:
+
+* Documentação Bootsrap: https://getbootstrap.com/docs/4.3/getting-started/introduction/
+* MDN web docs: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/log10
+* The D3 Graph Gallery: https://www.d3-graph-gallery.com/index.html & https://www.d3-graph-gallery.com/graph/barplot_button_data_simple.html
+* jQuery: https://api.jquery.com/
